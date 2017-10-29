@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-3">
+      <div class="dir-path">
+        <span ng-click="backPath()" ng-show="dirInfo.path != 'disk:/'" class="glyphicon glyphicon-arrow-left" role='button'></span>
+        Путь: {{dirInfo.path}}
+      </div> <br>
+      <div ng-repeat="item in dirInfo._embedded.items" class="dir-items">
+        <span ng-class="item.type == 'dir' ? 'glyphicon-folder-open' : 'glyphicon-file'" class="glyphicon"></span>
+        <span ng-click="itemClick($index)" role="button">{{item.name}}</span>
+      </div>
+    </div>
+    <div class="col-xs-9">
+      <div ng-show="itemInfo">
+        <span>Имя: {{itemInfo.name}}</span> <br>
+        <span>Создан: {{itemInfo.created | date:'dd-MM-yyyy HH:mm'}}</span> <br>
+        <span>Тип: {{itemInfo.media_type}}</span> <br>
+        <span>Размер: {{itemInfo.size}}</span> <br>
+      </div>
+    </div>
+  </div>
+</div>

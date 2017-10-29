@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <title>yaDisk</title>
+  <link href="vendors/bs/css/bootstrap.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <div class="container-fluid" ng-controller="mainCtrl">
+    <div class="row">
+        <div class="navbar navbar-inverse">
+          <a class="navbar-brand">yaDisk-ng</a>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a ui-sref="lenta"><span class="glyphicon glyphicon-home"></span> Главная</a></li>
+            <li><a ui-sref="settings"><span class="glyphicon glyphicon-cog"></span> Настройки</a></li>
+            <li><a ui-sref="profile"><span class="glyphicon glyphicon-user"></span> Профиль {{uName}}</a></li>
+            <li><a ui-sref="login"><span class="glyphicon glyphicon-log-in"></span> Вход &nbsp;</a></li>
+          </ul>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12" ui-view></div>
+    </div>
+  </div>
+  <script src="app.js" type="text/javascript"></script>
+</body>
+</html>
